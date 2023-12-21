@@ -1,0 +1,20 @@
+version: '3'
+services:
+  service1:
+    build:
+      context: ./users
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+
+  service2:
+    build:
+      context: ./orders
+    ports:
+      - "3001:3001"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
